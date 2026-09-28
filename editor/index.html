@@ -1,3 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
   <meta charset="UTF-8">
+  <title>KidScratch - Visual Playground</title>
+
+  <!-- Load JSZip BEFORE your script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+
+<select id="mySelect">
+  <option value="new">New Project</option>
+  <option value="save">Publish</option>
+  <option value="reload">Reload</option>
+  <option value="export">Export</option>
+</select>
+
+<script>
+const select = document.getElementById('mySelect');
+
+select.addEventListener('change', () => {
+  const value = select.value;
+
+  if (value === 'new') {
+    console.log('Creating new project...');
+  }
+
+  if (value === 'save') {
+    console.log('Publishing project...');
+  }
+
+  if (value === 'reload') {
+    location.reload();
+  }
+
+  if (value === 'export') {
+    alert('Exporting project...');
+
+    const project = {
+      name: "Project"
+        metadata: "blank project"
+    version-of-project: 1
+        was-in: "KidScratch"
+         message: "hello world"
+       is-project?: "yes"
+         blocks: [],
+         edits: {}
+  }, null, 2));
+
+
+
+    const zip = new JSZip();
+    zip.file("README.md", "blank project");
+    zip.file("project.json", JSON.stringify(project, null 2));
+
+    zip.generateAsync({ type: "blob" }).then(content => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(content);
+      a.download = "Project.kidscratch";
+      a.click();
+    });
+  }
+});
+</script>
+
+</body>
+</html
