@@ -1,10 +1,10 @@
 <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
-<title>flag.svg</title>
+  <title>flag.svg</title>
   <desc>Hello</desc>
+
   <!-- Flagpole -->
   <rect x="10" y="10" width="6" height="60" fill="#555555" />
 
-  <!-- Flag -->
-  <path d="M16 10 L80 20 L16 30 L80 40 L16 50 Z" fill="#1fbf3a" />
-
+  <!-- Narrower square flag -->
+  <rect x="16" y="10" width="40" height="20" fill="#1fbf3a" />
 </svg>
